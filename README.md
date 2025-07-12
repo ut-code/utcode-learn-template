@@ -10,7 +10,7 @@ ut.code(); Learnに準拠したサンプルプロジェクトです。
   - 開発環境：Viteの開発用サーバー
   - 本番環境：Viteにより出力されたHTML・CSS・JavaScriptファイル群
 - バックエンド
-  - 開発環境：今回は`ts-node`を使用（トランスパイルをしつつ実行できる）
+  - 開発環境：今回は`tsx`を使用（トランスパイルをしつつ実行できる）
   - 本番環境：TypeScriptのトランスパイラ（`tsc`）により出力されたJavaScriptファイル群
 
 # このリポジトリを作成した手順
@@ -48,7 +48,7 @@ ut.code(); Learnに準拠したサンプルプロジェクトです。
    $ cd backend
    $ npm init
    $ npm install express cors
-   $ npm install -D typescript ts-node @types/express @types/cors
+   $ npm install -D typescript tsx @types/express @types/cors
    $ npx tsc --init
    $ npx prisma init
    ```
@@ -60,7 +60,7 @@ ut.code(); Learnに準拠したサンプルプロジェクトです。
 1. `/backend/tsconfig.json`の`allowJs`オプションを`true`にしてPrismaが生成したJavaScriptファイルをトランスパイル結果に含めるようにする
 1. `/backend/dist`を`/backend/.gitignore`に追加する
 1. `/backend/package.json`を変更して次のコマンドが使えるようにする
-   - `npm run dev`：`ts-node`を使ってトランスパイル前のTypeScriptを直接実行する（開発環境用）
+   - `npm run dev`：`tsx`を使ってトランスパイル前のTypeScriptを直接実行する（開発環境用）
    - `npm run build`：`tsc`を使ってTypeScriptをJavaScriptにトランスパイルする
    - `npm start`：`tsc`によって出力されたJavaScriptを実行する（本番環境用）
 

@@ -1,9 +1,9 @@
 {
   "name": "backend",
   "scripts": {
-    "dev": "ts-node main.ts",
+    "dev": "tsx main.mts",
     "build": "tsc",
-    "start": "node dist/main.js"
+    "start": "node dist/main.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.11.1",
@@ -14,7 +14,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "prisma": "^6.11.1",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }
