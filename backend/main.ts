@@ -6,9 +6,9 @@ const app = express();
 const client = new PrismaClient();
 
 // 別ドメインからFetch APIを用いてリクエストを送信可能にするために必要
-// このままだと外部サイトからもリクエストが投げられるようになるので実運用の場合は追加で制限が必要
+// WEB_ORIGINに設定したドメインからのリクエストのみを許可する
 // 参考：https://developer.mozilla.org/ja/docs/Web/HTTP/Guides/CORS
-app.use(cors());
+app.use(cors({ origin: process.env.WEB_ORIGIN }));
 
 app.use(express.json());
 

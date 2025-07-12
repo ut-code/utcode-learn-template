@@ -54,7 +54,7 @@ ut.code(); Learnに準拠したサンプルプロジェクトです。
    ```
 
 1. `/frontend/.env`を作成して、`VITE_API_ENDPOINT`を`http://localhost:3000`に設定する
-1. `/backend/.env`の`DATABASE_URL`を設定する
+1. `/backend/.env`で`WEB_ORIGIN`を`http://localhost:5173`に設定し、`DATABASE_URL`も設定する
 1. `/backend/prisma/schema.prisma`の内容をデータベースに反映させるために`npx prisma db push`を実行する
 1. `/backend/tsconfig.json`の`outDir`オプションを`./dist`にしてトランスパイル結果が`/backend/dist`に入るようにする
 1. `/backend/tsconfig.json`の`allowJs`オプションを`true`にしてPrismaが生成したJavaScriptファイルをトランスパイル結果に含めるようにする
