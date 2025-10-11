@@ -2,7 +2,7 @@
   "name": "backend",
   "scripts": {
     "dev": "tsx main.mts",
-    "build": "tsc",
+    "build": "npx prisma generate --no-engine && tsc",
     "start": "node dist/main.mjs"
   },
   "dependencies": {
