@@ -17,9 +17,8 @@
 
     // Other Outputs
     "sourceMap": true,
-    // "declaration": true,
-    // "declarationMap": true,
-    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
