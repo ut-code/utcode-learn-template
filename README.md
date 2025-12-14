@@ -33,6 +33,12 @@ ut.code(); Learnに準拠したサンプルプロジェクトです。
    ◇  Select a variant:
    │  TypeScript
    │
+   ◇  Use rolldown-vite (Experimental)?:
+   │  No
+   │
+   ◇  Install with npm and start now?
+   │  No
+   │
    ◇  Scaffolding project in /home/user/projects/utcode-learn-template/frontend...
    │
    └  Done. Now run:
@@ -57,7 +63,7 @@ ut.code(); Learnに準拠したサンプルプロジェクトです。
 1. `/backend/.env`で`WEB_ORIGIN`を`http://localhost:5173`に設定し、`DATABASE_URL`も設定する
 1. `/backend/prisma/schema.prisma`の内容をデータベースに反映させるために`npx prisma db push`を実行する
 1. `/backend/tsconfig.json`の`outDir`オプションを`./dist`にしてトランスパイル結果が`/backend/dist`に入るようにする
-1. `/backend/tsconfig.json`の`allowJs`オプションを`true`にしてPrismaが生成したJavaScriptファイルをトランスパイル結果に含めるようにする
+1. `/backend/tsconfig.json`の`declaration`オプションと`declarationMap`オプションを消し`allowJs`オプションを`true`にしてPrismaが生成したJavaScriptファイルをトランスパイル結果に含めるようにする
 1. `/backend/dist`を`/backend/.gitignore`に追加する
 1. `/backend/package.json`を変更して次のコマンドが使えるようにする
    - `npm run dev`：`tsx`を使ってトランスパイル前のTypeScriptを直接実行する（開発環境用）
