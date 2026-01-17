@@ -53,17 +53,18 @@ ut.code(); Learnに準拠したサンプルプロジェクトです。
    $ mkdir backend
    $ cd backend
    $ npm init
-   $ npm install express cors
-   $ npm install -D typescript tsx @types/express @types/cors
+   $ npm install express @prisma/client dotenv cors
+   $ npm install -D typescript tsx @types/express prisma @types/cors
    $ npx tsc --init
    $ npx prisma init
    ```
 
 1. `/frontend/.env`を作成して、`VITE_API_ENDPOINT`を`http://localhost:3000`に設定する
+1. `/backend/package.json`で`type`フィールドを`module`に設定する
 1. `/backend/.env`で`WEB_ORIGIN`を`http://localhost:5173`に設定し、`DATABASE_URL`も設定する
+1. `/backend/prisma.config.ts`に`import "dotenv/config";`を追加して、`.env`の内容が読み込まれるようにする
 1. `/backend/prisma/schema.prisma`の内容をデータベースに反映させるために`npx prisma db push`を実行する
 1. `/backend/tsconfig.json`の`outDir`オプションを`./dist`にしてトランスパイル結果が`/backend/dist`に入るようにする
-1. `/backend/tsconfig.json`の`declaration`オプションと`declarationMap`オプションを消し`allowJs`オプションを`true`にしてPrismaが生成したJavaScriptファイルをトランスパイル結果に含めるようにする
 1. `/backend/dist`を`/backend/.gitignore`に追加する
 1. `/backend/package.json`を変更して次のコマンドが使えるようにする
    - `npm run dev`：`tsx`を使ってトランスパイル前のTypeScriptを直接実行する（開発環境用）
